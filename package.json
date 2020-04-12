@@ -1,0 +1,24 @@
+{
+  "name": "nodesocketio",
+  "version": "1.0.1",
+  "description": "NodeJS Socket.io",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/coderinsider/note-socketio.git"
+  },
+  "author": "EI THAW",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/coderinsider/note-socketio/issues"
+  },
+  "homepage": "https://github.com/coderinsider/note-socketio#readme",
+  "dependencies": {
+    "express": "^4.17.1",
+    "nodemon": "^2.0.3",
+    "socket.io": "^2.3.0"
+  }
+}
