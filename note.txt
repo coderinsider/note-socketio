@@ -1,0 +1,2 @@
+On Window
+set DEBUG=* & npm run start
