@@ -40,11 +40,19 @@
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/js/bootstrap.min.js"></script>
     <script src="/socket.io/socket.io.js"></script>
     <script>
-        const socket = io.connect('http://localhost:4000');
-        socket.on('message', (data) => {
-            console.log(data);
-            socket.emit("another event", {jeremy: "I am great thank you"})
-        })
+        const socket = io(); //io.connect('http://localhost:4000');
+        $('form').submit(() => {
+            socket.emit('message', $('#m').val());
+            $('#m').val('');
+            return false;
+        });
+        socket.on('message', (msg) => {
+            $('#messages').append($('<li>').text(msg));
+        });
+        // socket.on('message', (data) => {
+        //     console.log(data);
+        //     socket.emit("another event", {jeremy: "I am great thank you"})
+        // })
     </script>
 </body>
 </html>
