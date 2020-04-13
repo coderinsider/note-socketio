@@ -11,7 +11,9 @@ server.listen(port, () => {
 app.get('/', (req, res) => {
     res.sendFile(__dirname + "/public/index.html");
 });
-
+app.get('/javascript', (req, res) => {
+    res.sendFile(__dirname + "/public/javascript.html");
+});
 app.get("*", (request, response) => {
     // response.writeHead("200", {"Content-Type": "text/plain"}); //("404.html");
     // response.write("Sorry, I can't not find your directory");
