@@ -19,6 +19,8 @@ app.get("*", (request, response) => {
     response.sendFile(__dirname + "/public/404.html");
 });
 
+
+/*
 io.on('connection', (socket) => {
     console.log(`User connected`);
     // socket.emit('message', {manny: 'hey how are you?'});
@@ -36,3 +38,18 @@ io.on('connection', (socket) => {
         io.emit("message", "user disconnected");
     });
 })
+*/
+// Tech namespace
+const tech = io.of('/tech');
+tech.on('connection', (socket) => {
+    console.log(`Browser accepted Connected`);
+    socket.on('message', (msg) => {
+        console.log('message' + msg);
+        tech.emit("message", msg);
+    });
+
+    socket.on('disconnect', () => {
+        console.log('Browser disconnected!');
+        tech.emit("message", "user disconnected");
+    })
+});
